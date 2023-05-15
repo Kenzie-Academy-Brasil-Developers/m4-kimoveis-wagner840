@@ -18,8 +18,8 @@ export const getServiceSchedule = async (
   }
   const realEstate: RealEstate | null = await realEstateRepository
     .createQueryBuilder("realEstate")
-    .innerJoinAndSelect("realEstate.schedule", "schedule")
-    .innerJoinAndSelect("schedule.user", "user")
+    .innerJoinAndSelect("realEstate.schedules", "schedules")
+    .innerJoinAndSelect("schedules.user", "user")
     .innerJoinAndSelect("realEstate.address", "address")
     .innerJoinAndSelect("realEstate.category", "category")
     .where("realEstate.id = :realEstateId", { realEstateId: realEstateId })

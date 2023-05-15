@@ -6,7 +6,6 @@ import {
   TuserUpdateRequest,
 } from "../../interfaces/user.interface";
 import { userSchemaResponse } from "../../schemas/users.schema";
-import { AppError } from "../../error";
 
 export const updateServiceUser = async (
   user: TuserUpdateRequest,

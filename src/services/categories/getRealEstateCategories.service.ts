@@ -1,7 +1,6 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Category } from "../../entities";
-
 import { TRealEstateCategory } from "../../interfaces/categories.interface";
 import { realEstateCategorySchema } from "../../schemas/category.schema";
 

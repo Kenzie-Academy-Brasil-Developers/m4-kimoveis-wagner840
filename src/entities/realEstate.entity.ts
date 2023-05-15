@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
-  ManyToMany,
   ManyToOne,
   OneToMany,
   OneToOne,
@@ -42,5 +41,5 @@ export class RealEstate {
   category: Category;
 
   @OneToMany(() => Schedule, (Schedule) => Schedule.realEstate)
-  schedule: Schedule[];
+  schedules: Schedule[];
 }

@@ -24,8 +24,6 @@ export const ensureAddress = async (
     zipCode: data.zipCode,
   });
 
-  console.log(foundAddress);
-
   if (foundAddress) {
     throw new AppError("Address already exists", 409);
   }

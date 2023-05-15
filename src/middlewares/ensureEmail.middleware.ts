@@ -13,15 +13,12 @@ export const ensureEmail = async (
   const user: TUserRequest = req.body;
 
   const userRepository: Repository<User> = AppDataSource.getRepository(User);
-  console.log(user.email);
 
   if (!user.email) {
     next();
   }
 
   const emailFound = await userRepository.findOneBy({ email: user.email });
-
-  console.log(emailFound);
 
   if (emailFound) {
     throw new AppError("Email already exists", 409);

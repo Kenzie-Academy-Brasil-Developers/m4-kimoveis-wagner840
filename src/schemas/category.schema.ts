@@ -19,17 +19,15 @@ export const realStateCategorySchema = z.object({
   updatedAt: z.string(),
 });
 
-const realEstateSchema = z.object({
-  category: categorySchema,
+export const realEstateSchema2 = z.object({
   id: z.number(),
-  sold: z.boolean().default(false),
-  value: z.number().default(0),
-  size: z.number().positive(),
-  address: addressRequestSchema,
+  size: z.number(),
+  value: z.number(),
+  sold: z.boolean(),
   createdAt: z.string(),
   updatedAt: z.string(),
 });
 
 export const realEstateCategorySchema = categorySchema.extend({
-  realEstate: realEstateSchema.array(),
+  realEstate: realEstateSchema2.array(),
 });
