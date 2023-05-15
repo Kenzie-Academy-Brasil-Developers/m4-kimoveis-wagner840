@@ -1,12 +1,13 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
-import { Category } from "../../entities";
+import { Category, RealEstate } from "../../entities";
 import { TRealEstateCategory } from "../../interfaces/categories.interface";
 import { realEstateCategorySchema } from "../../schemas/category.schema";
+import { TRealEstate } from "../../interfaces/realEstate.interface";
 
 export const getServiceRealEstateCategory = async (
   id: number
-): Promise<any> => {
+): Promise<TRealEstateCategory> => {
   const categoryRepository: Repository<Category> =
     AppDataSource.getRepository(Category);
 
